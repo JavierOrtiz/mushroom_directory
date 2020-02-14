@@ -1,0 +1,2 @@
+module ElasticBoardsHelper
+end
