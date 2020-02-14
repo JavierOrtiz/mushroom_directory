@@ -3,6 +3,7 @@ class CreateMushrooms < ActiveRecord::Migration[6.0]
     create_table :mushrooms do |t|
 
       t.string :family
+      t.string :typology
       t.string :cap_shape
       t.string :cap_surface
       t.string :cap_color
