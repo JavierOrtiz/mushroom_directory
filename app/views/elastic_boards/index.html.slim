@@ -3,6 +3,11 @@ h1
 p
   | Find me in app/views/elastic_boards/index.html.erb
 
+= form_with url: elastic_boards_path do |f|
+  - @filters.each do |filter|
+    = f.label filter[0]
+    = f.select(filter[0], filter[1].map(&:flatten), { include_blank: true })
+  = f.submit "Filter"
 table
   thead
     th

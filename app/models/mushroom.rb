@@ -1,11 +1,11 @@
 class Mushroom < ApplicationRecord
   searchkick
 
-  after_commit :reindex
+  after_commit :reindex_mushroom
 
   private
 
-  def reindex
-    self.reindex
+  def reindex_mushroom
+    MushroomReindexerJob.perform_later(self)
   end
 end
