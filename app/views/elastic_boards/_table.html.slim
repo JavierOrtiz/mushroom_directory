@@ -1,11 +1,12 @@
 table.table.table-striped
   thead
     tr
-      - @table_column_names.each do |column_name|
+      - columns.each do |column_name|
         th = column_name
   tbody
-    - @mushrooms.each do |mushroom|
+    - mushrooms.each do |mushroom|
       tr
-        - @table_column_names.each do |column|
-          td = mushroom.send(column)
-= paginate @mushrooms
+        - columns.each do |column|
+          td = t("#{mushroom.family}.#{column}.#{mushroom.send(column)}")
+
+= paginate mushrooms
