@@ -2,6 +2,14 @@ h1
   | ElasticBoards#index
 p
   | Find me in app/views/elastic_boards/index.html.erb
-= Mushroom.column_names
-- @mushrooms.each do |mushroom|
-  = mushroom
+
+table
+  thead
+    th
+      - @table_column_names.each do |column_name|
+        td = column_name
+  tbody
+    - @mushrooms.each do |mushroom|
+      tr
+        - @table_column_names.each do |column|
+          td = mushroom.send(column)
