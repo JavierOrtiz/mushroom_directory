@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_222704) do
 
   create_table "mushrooms", force: :cascade do |t|
     t.string "family"
+    t.string "typology"
     t.string "cap_shape"
     t.string "cap_surface"
     t.string "cap_color"
