@@ -1,0 +1,7 @@
+= form_with url: elastic_boards_path, **{ id: "formFilter"} do |f|
+  - filters.each do |filter|
+    = f.label filter[0]
+    br
+    = f.select(filter[0], filter[1].map(&:flatten), { include_blank: true, selected: @query_params[filter[0].to_s], onchange: 'reload_filters()' }, {class: "form-control", onchange: 'reload_filters()' })
+    br
+  = f.submit "Filter", class: "btn btn-block btn-info"

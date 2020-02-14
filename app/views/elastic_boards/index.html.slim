@@ -1,27 +1,17 @@
-h1
-  | ElasticBoards#index
-p
-  | Find me in app/views/elastic_boards/index.html.erb
+h1 Results
+#stats
+  = render "elastic_boards/stats", mushrooms: @mushrooms
 
 .container-fluid
   .row
-    .col-md-2
-      = form_with url: elastic_boards_path do |f|
-        - @filters.each do |filter|
-          = f.label filter[0]
-          br
-          = f.select(filter[0], filter[1].map(&:flatten), { include_blank: true}, {class: "form-control" })
-          br
-        = f.submit "Filter", class: "btn btn-block btn-info"
-    .col-md-10
-      table.table.table-striped
-        thead
-          th
-            - @table_column_names.each do |column_name|
-              td = column_name
-        tbody
-          - @mushrooms.each do |mushroom|
-            tr
-              - @table_column_names.each do |column|
-                td = mushroom.send(column)
-      = paginate @mushrooms
+    #filters.col-md-2
+      = render "elastic_boards/filters", filters: @filters
+    #table.col-md-10
+      = render "elastic_boards/table", columns: @table_column_names, mushrooms: @mushrooms
+
+
+javascript:
+    function reload_filters() {
+        form = document.getElementById("formFilter");
+        Rails.fire(form, 'submit');
+    }

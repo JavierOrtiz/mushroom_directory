@@ -1,0 +1,3 @@
+document.getElementById("stats").innerHTML = "<%= j render partial: 'elastic_boards/stats', locals: { mushrooms: @mushrooms } %>";
+document.getElementById("filters").innerHTML = "<%= j render partial: 'elastic_boards/filters', locals: { filters: @filters } %>";
+document.getElementById("table").innerHTML = "<%= j render partial: 'elastic_boards/table', locals: { columns: @table_column_names, mushrooms: @mushrooms } %>";
