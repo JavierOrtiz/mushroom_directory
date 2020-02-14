@@ -6,6 +6,6 @@ class Mushroom < ApplicationRecord
   private
 
   def reindex_mushroom
-    MushroomReindexerJob.perform_later(self)
+    MushroomReindexerJob.perform_async(self)
   end
 end

@@ -9,7 +9,7 @@ namespace :mushrooms do
     csv = CSV.parse(file, headers: false)
     csv.each do |row|
       mushroom_data = Hash[ *headers.each_with_index.collect { |h, index| [ h, row[index] ] }.flatten ]
-      MushroomCreatorJob.perform_later(mushroom_data)
+      MushroomCreatorJob.perform_async(mushroom_data)
     end
   end
 end
