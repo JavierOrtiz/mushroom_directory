@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version
 
-Things you may want to cover:
+Version: 2.6.3
 
-* Ruby version
+### System dependencies
 
-* System dependencies
+To run this project you need the next apps:
 
-* Configuration
+####Sidekiq
 
-* Database creation
+#### Redis
+For install: 
 
-* Database initialization
+`brew install redis` 
 
-* How to run the test suite
+Launch: 
 
-* Services (job queues, cache servers, search engines, etc.)
+`launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist`
+#### Elasticsearch
+To use Searhkick first you need exec this:
+```
+    brew install elasticsearch
+    brew services start elasticsearch 
+```
+#### Postgresql
 
-* Deployment instructions
+### Configuration
 
-* ...
+#### 1. Create index
+`rails searchkick:reindex CLASS=Mushroom`
+
+In case you need reset all indices you can use this:
+
+`Mushroom.search_index.clean_indices`
+
+Or if you want delete all:
+
+```
+name = Mushroom.search_index.name
+Searchkick.client.indices.delete(index: name)
+```
+
+#### 2. Load data
+`rails mushrooms:load_data`
+
+#### 3. Launch server
+
+An easy command like:
+
+`rails s `
