@@ -20,9 +20,4 @@ class RansackBoardsController < ApplicationController
   def column_names
     @table_column_names = Mushroom.column_names.reject { |cn| cn.in? ["created_at", "updated_at", "id"] }
   end
-
-  def query_params
-    @permitted_params ||= params.permit(column_names)
-    @query_params ||= @permitted_params.delete_if { |_key, value| value.blank? }
-  end
 end
