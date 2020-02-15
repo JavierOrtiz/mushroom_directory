@@ -1,0 +1,6 @@
+= search_form_for @q, url: ransack_boards_path, **{ id: "formFilter"} do |f|
+  - filters.each do |filter|
+    = f.label "#{filter.first[0].to_s}_eq", filter.first[0].to_s
+    br
+    = f.select "#{filter.first[0].to_s}_eq", options_for_select(filter.first[1].map(&:reverse), @q.send("#{filter.first[0].to_s}_eq")), { include_blank: true }, {class: "form-control", onchange: 'reload_filters()' }
+  = f.submit "Filter", class: "btn btn-block btn-info"
