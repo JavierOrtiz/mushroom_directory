@@ -1,4 +1,5 @@
 class ElasticBoardsController < ApplicationController
+  layout 'search'
   before_action :column_names, :filters_constructor
   def index
     @mushrooms = mushrooms_search
