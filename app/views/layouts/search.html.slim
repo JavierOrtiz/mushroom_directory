@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | MushroomsMVP Searchs
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand href="#"  Mushroom Search
+      button.navbar-toggler aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"
+        span.navbar-toggler-icon
+      #navbarNavAltMarkup.collapse.navbar-collapse
+        .navbar-nav
+          = link_to "Home", root_path, class: "nav-item nav-link"
+          = link_to "Ransack", ransack_boards_path, class: "nav-item nav-link"
+          = link_to "ElasticSearch", elastic_boards_path, class: "nav-item nav-link"
+    .container-fluid
+      = yield

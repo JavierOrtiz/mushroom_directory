@@ -1,4 +1,5 @@
 class RansackBoardsController < ApplicationController
+  layout 'search'
   before_action :column_names, :filters_constructor
   def index
     @q = Mushroom.ransack(params[:q])

@@ -1,5 +1,6 @@
 h1 Elasticsearch dashboard with Searchkick gem.
 p Filters applies dynamicaly, if you want to reset filters just refresh the page.
+= link_to "Reset filters", elastic_boards_path, class: "btn btn-danger float-right"
 #stats
   = render "elastic_boards/stats", mushrooms: @mushrooms
 
