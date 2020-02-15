@@ -1,5 +1,9 @@
 # README
 
+Hello! You can try this project here:
+
+`https://secure-peak-32541.herokuapp.com/`
+
 ### Ruby version
 
 Version: 2.6.3
