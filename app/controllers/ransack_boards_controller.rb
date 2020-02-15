@@ -1,37 +1,19 @@
-class ElasticBoardsController < ApplicationController
+class RansackBoardsController < ApplicationController
   before_action :column_names, :filters_constructor
   def index
-    @mushrooms = mushrooms_search
+    @q = Mushroom.ransack(params[:q])
+    @mushrooms = @q.result(distinct: true).paginate(page: params[:page], per_page: 50)
   end
 
   def create
-    @mushrooms = mushrooms_search
+    @q = Mushroom.ransack(params[:q])
+    @mushrooms = @q.result(distinct: true).paginate(page: params[:page], per_page: 50)
   end
 
   private
 
-  def mushrooms_search
-    Mushroom.search("*", where: query_params, page: params[:page], per_page: 50, aggs: column_names.map(&:to_sym), load: false)
-  end
-
   def filters_constructor
-    result = {}
-    mushrooms_search.aggregations.each do |aggregation|
-      parsed_aggregations = parse_aggregation(aggregation)
-      next if parsed_aggregations.empty?
-
-      result[aggregation[0].to_sym] = parsed_aggregations
-    end
-    @filters = result
-  end
-
-  def parse_aggregation(agg)
-    result = []
-    buckets = (agg[1]["buckets"] || agg[1].dig(agg[0], "buckets"))
-    buckets.each do |key|
-      result << { t("agaricus_lepiota.#{agg[0]}.#{key['key']}") => key['key']}
-    end
-    result
+    @filters = I18n.t("agaricus_lepiota").map{|key, value| { key => value.map(&:flatten) }}
   end
 
   def column_names
