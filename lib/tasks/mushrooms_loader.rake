@@ -20,4 +20,18 @@ namespace :mushrooms do
       end
     end
   end
+
+  task :reindex => :environment do
+    mushrooms = Mushroom.all
+    progressbar = ProgressBar.create(total: mushrooms.count,  format: "%t: |\e[0;34m%B\e[0m|")
+
+    mushrooms.each do |mushroom|
+      mushroom.reindex
+      progressbar.increment
+    end
+  end
+
+  task :clean_indices => :environment do
+    Mushroom.search_index.clean_indices
+  end
 end

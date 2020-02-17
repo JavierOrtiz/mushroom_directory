@@ -30,24 +30,17 @@ To use Searhkick first you need exec this:
 ```
 #### Postgresql
 
-### Configuration
+### How to run
 
 #### 1. Create index
 `rails searchkick:reindex CLASS=Mushroom`
 
 In case you need reset all indices you can use this:
 
-`Mushroom.search_index.clean_indices`
-
-Or if you want delete all:
-
-```
-name = Mushroom.search_index.name
-Searchkick.client.indices.delete(index: name)
-```
+`rails mushrooms:clean_indices`
 
 #### 2. Load data
-`rails mushrooms:load_data`
+`rails mushrooms:load_all`
 
 #### 3. Launch server
 
