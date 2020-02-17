@@ -203,6 +203,7 @@ GEM
       rspec-core (~> 3.0, >= 3.0.0)
       sidekiq (>= 2.4.0)
     rspec-support (3.9.2)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -283,6 +284,7 @@ DEPENDENCIES
   ransack!
   rspec-rails (~> 4.0.0.beta)
   rspec-sidekiq
+  ruby-progressbar
   sass-rails (>= 6)
   searchkick
   sidekiq (~> 6.0.0)
