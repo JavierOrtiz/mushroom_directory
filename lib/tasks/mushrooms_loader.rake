@@ -7,9 +7,31 @@ namespace :mushrooms do
     :spore_print_color, :population, :habitat]
 
     csv = CSV.parse(file, headers: false)
+    # Tools
+    progressbar = ProgressBar.create(total: csv.count,  format: "%t: |\e[0;34m%B\e[0m|")
+
     csv.each do |row|
       mushroom_data = Hash[ *headers.each_with_index.collect { |h, index| [ h, row[index] ] }.flatten ]
-      MushroomCreatorJob.perform_later(mushroom_data)
+      if Rails.env.production?
+        MushroomCreatorJob.perform_later(mushroom_data)
+      else
+        Mushroom.where(family: "agaricus_lepiota", **mushroom_data).first_or_create
+        progressbar.increment
+      end
     end
+  end
+
+  task :reindex => :environment do
+    mushrooms = Mushroom.all
+    progressbar = ProgressBar.create(total: mushrooms.count,  format: "%t: |\e[0;34m%B\e[0m|")
+
+    mushrooms.each do |mushroom|
+      mushroom.reindex
+      progressbar.increment
+    end
+  end
+
+  task :clean_indices => :environment do
+    Mushroom.search_index.clean_indices
   end
 end
