@@ -12,7 +12,7 @@ Version: 2.6.3
 
 To run this project you need the next apps:
 
-####Sidekiq
+#### Sidekiq
 
 #### Redis
 For install: 
@@ -54,3 +54,11 @@ Searchkick.client.indices.delete(index: name)
 An easy command like:
 
 `rails s `
+
+
+
+
+## Pending tasks:
+
+* Add requests test
+* Add sidekiq tests
