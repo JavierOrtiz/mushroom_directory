@@ -51,6 +51,8 @@ group :test do
   gem 'rspec-sidekiq'
   gem 'climate_control'
   gem 'factory_bot_rails'
+  gem 'webmock'
+  gem 'simplecov', require: false
 end
 
 group :development do
