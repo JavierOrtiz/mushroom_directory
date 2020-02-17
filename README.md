@@ -54,3 +54,11 @@ Searchkick.client.indices.delete(index: name)
 An easy command like:
 
 `rails s `
+
+### 4. Run the tests:
+
+`bundle exec rspec`
+
+### 5. Test Coverage with [SimpleCov](https://github.com/colszowka/simplecov)
+
+`COVERAGE=on bundle exec rspec`
