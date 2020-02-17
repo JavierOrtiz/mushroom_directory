@@ -1,0 +1,207 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/helpers/elastic_boards_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/helpers/homes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/models/mushroom.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/jobs/mushroom_reindexer_job.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/jobs/application_job.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/controllers/elastic_boards_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          84,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/jobs/mushroom_creator_job.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/controllers/ransack_boards_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/controllers/homes_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/javier/Documents/Adcombi/MushroomsMVP/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1581928122
+  }
+}
