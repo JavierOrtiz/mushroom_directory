@@ -1,6 +1,6 @@
 = content_tag :table, class: "table table-striped" do
   - columns.each do |column_name|
-    = content_tag :th, sort_link(@q, column_name)
+    = content_tag :th, sort_link(@q, t(column_name))
   tbody
     - mushrooms.each do |mushroom|
       tr

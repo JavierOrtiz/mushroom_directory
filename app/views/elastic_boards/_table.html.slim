@@ -2,7 +2,7 @@ table.table.table-striped
   thead
     tr
       - columns.each do |column_name|
-        th = column_name
+        th = t(column_name)
   tbody
     - mushrooms.each do |mushroom|
       tr
