@@ -1,6 +1,4 @@
 class ElasticBoardsController < ApplicationController
-  layout 'search'
-  before_action :column_names, :filters_constructor
   def index
     @mushrooms = mushrooms_search
   end
@@ -33,10 +31,6 @@ class ElasticBoardsController < ApplicationController
       result << { t("agaricus_lepiota.#{agg[0]}.#{key['key']}") => key['key']}
     end
     result
-  end
-
-  def column_names
-    @table_column_names = Mushroom.column_names.reject { |cn| cn.in? ["created_at", "updated_at", "id"] }
   end
 
   def query_params
