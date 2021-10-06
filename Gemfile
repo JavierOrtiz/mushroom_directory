@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem "slim-rails"
-gem 'sidekiq', '~>6.0.0'
+gem 'sidekiq', '~>6.2.1'
 
 # Elastic pack
 gem 'searchkick'
